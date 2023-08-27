@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="https://kit.fontawesome.com/2bf0199491.js" crossorigin="anonymous"></script>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/Free_Sample_By_Wix.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header"><b>Home</b></a></li>
+                    <li><a href="#about"><b>About</b></a></li>
+                    <li><a href="#Achievements"><b>Experiments</b></a></li>
+                    
+                    <li><a href="#contact"><b>Contact</b></a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+               
+                <h1 style="color: rgb(3, 64, 247); font-family: 'Courier New', Courier, monospace;">Hi, I'm <span>Yuvraj Singh</span>
+                    <br>RA2111026010425</h1>
+                <h2 style="color: rgb(10, 7, 7); font-family: 'Courier New', Courier, monospace;">I am a Machine Learning <br>enthusiast.</h2>
+            </div>
+        </div>
+    </div>
+    <!-- -------about-------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+               
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p style="font-size: 150%;"><b>
+                            Hi, my name is yuvraj singh.<br>
+                            I am a student of SRMIST, Kattankulathur, <br>
+                            currently pursuing B.Tech CSE with Specialization in AI & ML.<br>
+                            I am a Machine Learning enthusiast, and <br>
+                            I enjoy learning new technologies and implementing them.<br>
+                            I am interested in the field of Deep Learning, Artificial Intelligence, and Augmented Reality. 
+                            </b>
+
+                    </p>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+<!------------------Achievements---------------->
+<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <div id="Achievements">
+        <div class="container">
+            <h1 class="sub-title">Experiments</h1>
+            <div class="Achievements-list">
+                <div>
+                    <iconify-icon icon="simple-icons:" width="80" height="80"></iconify-icon>
+                    <h2>Exp1 - Abstract</h2>
+                    <p>An abstract was written on the topic of "A COMPARATIVE ANALYSIS OF COLLEGE DROPOUTS TREND WORLDWIDE", Where we studied and researched about the college Dropout trends worldwide</p>
+                    <a href="https://drive.google.com/file/d/1c5xa_XLeNQ8ZeO8vBk6PZdhZvYT-MLp3/view">Learn more</a>
+                </div>
+                <div>
+                    <iconify-icon icon="simple-icons:page" width="80" height="80"></iconify-icon>
+                    <h2>Exp - 2 Data visualization</h2>
+                    <p>Data of Higher education institutions growth in different catagories in India was collected and visualized using Tableau</p>
+                    <a href="https://public.tableau.com/app/profile/yuvraj.singh2329/viz/shared/WCZKWQYTX">Learn more</a>
+                </div>
+                <div>
+                    <i class=""></i>
+                    <h2>Exp - 3 Research Paper Related to Abstract</h2>
+                    <p>The research paper related to my chosen project which is "An Opportunity Missed: Features of College Dropouts A Case Study: The Academic College of Judea and Samar" by Dan Soen and Nitza Davidovitch</p>
+                    <a href="https://drive.google.com/file/d/1oP-dFJFSd0Ue33AVm_6NJIxGoPSpFKXf/view">Learn more</a>
+                </div>
+            </div>
+            
+                
+                
+            </div>
+        </div>
+    </div>
+<!------------------Portfolio---------------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class = "sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>yr2060@srmist.edu.in</p>
+            
+                <div class="social-icons">
+ 
+                    <a href="https://github.com/yuvrajsingh100903"><i class="fa-brands fa-github"></i></a> 
+                </div>
+                
+            </div>
+            
+    
+</div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzpj7v73lD5RcdfVByXRoK3Zkz4ltUIxl0itjhMSVU1PmK2QdzRecYn56mCDMmfg6U/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message Sent Successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },2000)
+                form.reset()
+            })
+            .catch(error => console.error('Submission Error!', error.message))
+        })
+      </script>
+</body>
+</html>
